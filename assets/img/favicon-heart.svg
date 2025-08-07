@@ -1,0 +1,38 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cute rounded square background with gradient -->
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#cuteGradient)" stroke="url(#borderGradient)" stroke-width="1.5"/>
+  
+  <!-- Main letter P with modern styling -->
+  <path d="M9 7 L9 25 M9 7 L17.5 7 C20 7 21.5 8.5 21.5 11 C21.5 13.5 20 15 17.5 15 L9 15" 
+        stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Cute little heart -->
+  <path d="M23 10 C23 8.5 21.8 7.5 20.5 7.5 C19.8 7.5 19.2 8 19 8.5 C18.8 8 18.2 7.5 17.5 7.5 C16.2 7.5 15 8.5 15 10 C15 12 19 15 19 15 C19 15 23 12 23 10 Z" 
+        fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Sparkle elements -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="26" cy="8" r="1"/>
+    <circle cx="6" cy="26" r="0.8"/>
+    <circle cx="27" cy="25" r="0.8"/>
+    <path d="M25 20 L25.5 21 L26.5 21 L25.8 21.7 L26 22.5 L25 22 L24 22.5 L24.2 21.7 L23.5 21 L24.5 21 Z"/>
+  </g>
+  
+  <!-- Cute dots pattern -->
+  <circle cx="7" cy="10" r="0.6" fill="#ffffff" opacity="0.4"/>
+  <circle cx="25" cy="15" r="0.6" fill="#ffffff" opacity="0.4"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="cuteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="30%" style="stop-color:#ec4899"/>
+      <stop offset="70%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce7f3"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+</svg>
