@@ -251,8 +251,10 @@ body::after {
   opacity: 0.3;
 }
 
-/* ===== 3D INTERACTIVE BACKGROUND ===== */
-.interactive-bg {
+/* ==========================================
+   ADVANCED ANIMATED BACKGROUND SYSTEM
+========================================== */
+.advanced-bg-system {
   position: fixed;
   top: 0;
   left: 0;
@@ -261,6 +263,253 @@ body::after {
   overflow: hidden;
   pointer-events: none;
   z-index: -2;
+}
+
+/* ===== DYNAMIC GRADIENT MESH ===== */
+.gradient-mesh-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mesh-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: meshOrbitFloat 25s ease-in-out infinite;
+  opacity: 0.15;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, rgba(102, 126, 234, 0.1) 40%, transparent 100%);
+  top: -20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 107, 181, 0.3) 0%, rgba(255, 107, 181, 0.1) 40%, transparent 100%);
+  top: 20%;
+  right: -15%;
+  animation-delay: -8s;
+}
+
+.orb-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.25) 0%, rgba(118, 75, 162, 0.08) 40%, transparent 100%);
+  bottom: -25%;
+  left: 20%;
+  animation-delay: -16s;
+}
+
+.orb-4 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 194, 226, 0.2) 0%, rgba(255, 194, 226, 0.05) 40%, transparent 100%);
+  top: 60%;
+  right: 30%;
+  animation-delay: -4s;
+}
+
+.orb-5 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, rgba(79, 172, 254, 0.03) 40%, transparent 100%);
+  top: 40%;
+  left: 60%;
+  animation-delay: -12s;
+}
+
+.orb-6 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.2) 0%, rgba(240, 147, 251, 0.05) 40%, transparent 100%);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: -20s;
+}
+
+@keyframes meshOrbitFloat {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: translate(50px, -80px) rotate(90deg) scale(1.1); 
+  }
+  50% { 
+    transform: translate(-30px, 60px) rotate(180deg) scale(0.9); 
+  }
+  75% { 
+    transform: translate(70px, 40px) rotate(270deg) scale(1.05); 
+  }
+}
+
+/* ===== FLOWING ENERGY WAVES ===== */
+.energy-wave-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.energy-wave {
+  position: absolute;
+  height: 2px;
+  border-radius: 1px;
+  opacity: 0.4;
+  background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
+}
+
+.wave-1 {
+  width: 300px;
+  top: 20%;
+  left: -300px;
+  background: linear-gradient(90deg, transparent 0%, rgba(102, 126, 234, 0.6) 50%, transparent 100%);
+  animation: waveFlow1 15s linear infinite;
+}
+
+.wave-2 {
+  width: 400px;
+  top: 45%;
+  right: -400px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 107, 181, 0.5) 50%, transparent 100%);
+  animation: waveFlow2 18s linear infinite;
+  animation-delay: -6s;
+}
+
+.wave-3 {
+  width: 250px;
+  bottom: 30%;
+  left: -250px;
+  background: linear-gradient(90deg, transparent 0%, rgba(118, 75, 162, 0.4) 50%, transparent 100%);
+  animation: waveFlow1 12s linear infinite;
+  animation-delay: -3s;
+}
+
+.wave-4 {
+  width: 350px;
+  top: 70%;
+  right: -350px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 194, 226, 0.3) 50%, transparent 100%);
+  animation: waveFlow2 20s linear infinite;
+  animation-delay: -10s;
+}
+
+.wave-5 {
+  width: 200px;
+  top: 10%;
+  left: -200px;
+  background: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.5) 50%, transparent 100%);
+  animation: waveFlow1 14s linear infinite;
+  animation-delay: -7s;
+}
+
+@keyframes waveFlow1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 300px)); }
+}
+
+@keyframes waveFlow2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100vw - 400px)); }
+}
+
+/* ===== CONSTELLATION NETWORK ===== */
+.constellation-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.constellation-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: nodeGlow 3s ease-in-out infinite;
+}
+
+.node-1 { top: 15%; left: 20%; animation-delay: 0s; }
+.node-2 { top: 25%; right: 30%; animation-delay: -0.5s; }
+.node-3 { bottom: 40%; left: 40%; animation-delay: -1s; }
+.node-4 { top: 60%; right: 20%; animation-delay: -1.5s; }
+.node-5 { bottom: 20%; left: 70%; animation-delay: -2s; }
+.node-6 { top: 80%; left: 30%; animation-delay: -2.5s; }
+.node-7 { top: 35%; left: 60%; animation-delay: -1.2s; }
+.node-8 { bottom: 60%; right: 40%; animation-delay: -0.8s; }
+
+.constellation-connection {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(102, 126, 234, 0.3) 50%, transparent 100%);
+  transform-origin: left center;
+  animation: connectionPulse 4s ease-in-out infinite;
+}
+
+.connection-1 {
+  top: 15%; left: 20%;
+  width: 200px;
+  transform: rotate(25deg);
+  animation-delay: 0s;
+}
+
+.connection-2 {
+  top: 25%; right: 30%;
+  width: 150px;
+  transform: rotate(-45deg);
+  animation-delay: -1s;
+}
+
+.connection-3 {
+  bottom: 40%; left: 40%;
+  width: 180px;
+  transform: rotate(60deg);
+  animation-delay: -2s;
+}
+
+.connection-4 {
+  top: 60%; right: 20%;
+  width: 220px;
+  transform: rotate(-30deg);
+  animation-delay: -3s;
+}
+
+.connection-5 {
+  top: 35%; left: 60%;
+  width: 160px;
+  transform: rotate(15deg);
+  animation-delay: -1.5s;
+}
+
+@keyframes nodeGlow {
+  0%, 100% { 
+    opacity: 0.6; 
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    box-shadow: 0 0 15px rgba(255, 107, 181, 0.6);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes connectionPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
 }
 
 /* Floating 3D Spheres */
@@ -548,6 +797,429 @@ body::after {
 
 .interactive-bg.mouse-active .geometric-shape {
   animation-play-state: paused;
+}
+
+/* ===== PREMIUM SPHERES SYSTEM ===== */
+.premium-spheres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.premium-sphere {
+  position: absolute;
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: premiumFloat 18s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.sphere-1 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.3), rgba(102, 126, 234, 0.05));
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.sphere-2 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 107, 181, 0.4), rgba(255, 107, 181, 0.08));
+  top: 30%;
+  right: 20%;
+  animation-delay: -3s;
+}
+
+.sphere-3 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, rgba(118, 75, 162, 0.25), rgba(118, 75, 162, 0.03));
+  bottom: 25%;
+  left: 30%;
+  animation-delay: -6s;
+}
+
+.sphere-4 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 194, 226, 0.3), rgba(255, 194, 226, 0.05));
+  top: 60%;
+  right: 15%;
+  animation-delay: -9s;
+}
+
+.sphere-5 {
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at 30% 30%, rgba(79, 172, 254, 0.35), rgba(79, 172, 254, 0.06));
+  top: 20%;
+  left: 60%;
+  animation-delay: -12s;
+}
+
+.sphere-6 {
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 30% 30%, rgba(240, 147, 251, 0.3), rgba(240, 147, 251, 0.04));
+  bottom: 15%;
+  right: 40%;
+  animation-delay: -15s;
+}
+
+.sphere-7 {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 107, 181, 0.5), rgba(255, 107, 181, 0.1));
+  top: 80%;
+  left: 70%;
+  animation-delay: -18s;
+}
+
+.sphere-8 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.2), rgba(102, 126, 234, 0.02));
+  bottom: 40%;
+  left: 80%;
+  animation-delay: -21s;
+}
+
+@keyframes premiumFloat {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: translate(40px, -60px) rotate(90deg) scale(1.1); 
+  }
+  50% { 
+    transform: translate(-20px, 80px) rotate(180deg) scale(0.9); 
+  }
+  75% { 
+    transform: translate(60px, -40px) rotate(270deg) scale(1.05); 
+  }
+}
+
+/* ===== GEOMETRIC ART SYSTEM ===== */
+.geometric-art-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.art-shape {
+  position: absolute;
+  opacity: 0.15;
+  animation: artShapeFloat 20s ease-in-out infinite;
+  filter: blur(0.5px);
+}
+
+.shape-triangle-1 {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid rgba(102, 126, 234, 0.3);
+  top: 25%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-hexagon-1 {
+  width: 60px;
+  height: 52px;
+  background: rgba(255, 107, 181, 0.2);
+  top: 50%;
+  right: 25%;
+  animation-delay: -5s;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+.shape-diamond-1 {
+  width: 50px;
+  height: 50px;
+  background: rgba(118, 75, 162, 0.25);
+  transform: rotate(45deg);
+  bottom: 30%;
+  left: 40%;
+  animation-delay: -10s;
+}
+
+.shape-circle-1 {
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(circle, rgba(255, 194, 226, 0.3) 0%, transparent 100%);
+  border-radius: 50%;
+  top: 15%;
+  right: 50%;
+  animation-delay: -15s;
+}
+
+.shape-pentagon-1 {
+  width: 55px;
+  height: 52px;
+  background: rgba(79, 172, 254, 0.2);
+  bottom: 20%;
+  right: 10%;
+  animation-delay: -7s;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shape-triangle-2 {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43px solid rgba(240, 147, 251, 0.25);
+  top: 70%;
+  left: 20%;
+  animation-delay: -12s;
+}
+
+.shape-square-1 {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 107, 181, 0.2);
+  border-radius: 8px;
+  top: 40%;
+  left: 80%;
+  animation-delay: -8s;
+}
+
+.shape-octagon-1 {
+  width: 48px;
+  height: 48px;
+  background: rgba(102, 126, 234, 0.15);
+  bottom: 60%;
+  right: 30%;
+  animation-delay: -3s;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+@keyframes artShapeFloat {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1); 
+    opacity: 0.15; 
+  }
+  25% { 
+    transform: translate(30px, -40px) rotate(90deg) scale(1.2); 
+    opacity: 0.25; 
+  }
+  50% { 
+    transform: translate(-25px, 50px) rotate(180deg) scale(0.8); 
+    opacity: 0.1; 
+  }
+  75% { 
+    transform: translate(45px, -30px) rotate(270deg) scale(1.1); 
+    opacity: 0.2; 
+  }
+}
+
+/* ===== AMBIENT LIGHT SYSTEM ===== */
+.ambient-light-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ambient-light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+  animation: ambientLightPulse 12s ease-in-out infinite;
+}
+
+.light-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+  top: -20%;
+  left: -20%;
+  animation-delay: 0s;
+}
+
+.light-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 181, 0.15) 0%, transparent 70%);
+  top: 30%;
+  right: -15%;
+  animation-delay: -4s;
+}
+
+.light-3 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.1) 0%, transparent 70%);
+  bottom: -25%;
+  left: 20%;
+  animation-delay: -8s;
+}
+
+.light-4 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 194, 226, 0.12) 0%, transparent 70%);
+  top: 60%;
+  right: 30%;
+  animation-delay: -2s;
+}
+
+.light-5 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: -6s;
+}
+
+@keyframes ambientLightPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 0.08; 
+  }
+  25% { 
+    transform: scale(1.1) rotate(90deg); 
+    opacity: 0.12; 
+  }
+  50% { 
+    transform: scale(0.9) rotate(180deg); 
+    opacity: 0.05; 
+  }
+  75% { 
+    transform: scale(1.05) rotate(270deg); 
+    opacity: 0.1; 
+  }
+}
+
+/* ===== PARTICLE FIELD SYSTEM ===== */
+.particle-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.field-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fieldParticleFloat 15s ease-in-out infinite;
+}
+
+.particle-1 { 
+  background: rgba(102, 126, 234, 0.8);
+  top: 12%; left: 18%; 
+  animation-delay: 0s; 
+}
+
+.particle-2 { 
+  background: rgba(255, 107, 181, 0.7);
+  top: 28%; right: 25%; 
+  animation-delay: -1.5s; 
+  width: 4px; height: 4px;
+}
+
+.particle-3 { 
+  background: rgba(118, 75, 162, 0.6);
+  bottom: 35%; left: 30%; 
+  animation-delay: -3s; 
+  width: 2px; height: 2px;
+}
+
+.particle-4 { 
+  background: rgba(255, 194, 226, 0.8);
+  top: 65%; right: 20%; 
+  animation-delay: -4.5s; 
+}
+
+.particle-5 { 
+  background: rgba(79, 172, 254, 0.7);
+  top: 45%; left: 70%; 
+  animation-delay: -6s; 
+  width: 5px; height: 5px;
+}
+
+.particle-6 { 
+  background: rgba(240, 147, 251, 0.6);
+  bottom: 20%; right: 35%; 
+  animation-delay: -7.5s; 
+}
+
+.particle-7 { 
+  background: rgba(102, 126, 234, 0.5);
+  top: 85%; left: 40%; 
+  animation-delay: -9s; 
+  width: 2px; height: 2px;
+}
+
+.particle-8 { 
+  background: rgba(255, 107, 181, 0.8);
+  top: 35%; left: 15%; 
+  animation-delay: -10.5s; 
+  width: 4px; height: 4px;
+}
+
+.particle-9 { 
+  background: rgba(118, 75, 162, 0.7);
+  bottom: 50%; right: 45%; 
+  animation-delay: -12s; 
+}
+
+.particle-10 { 
+  background: rgba(255, 194, 226, 0.6);
+  top: 8%; right: 15%; 
+  animation-delay: -13.5s; 
+  width: 6px; height: 6px;
+}
+
+.particle-11 { 
+  background: rgba(79, 172, 254, 0.8);
+  bottom: 75%; left: 80%; 
+  animation-delay: -15s; 
+}
+
+.particle-12 { 
+  background: rgba(240, 147, 251, 0.7);
+  top: 55%; right: 60%; 
+  animation-delay: -16.5s; 
+  width: 3px; height: 3px;
+}
+
+@keyframes fieldParticleFloat {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+    opacity: 0.7; 
+  }
+  25% { 
+    transform: translate(25px, -35px) scale(1.5); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(-15px, 45px) scale(0.5); 
+    opacity: 0.3; 
+  }
+  75% { 
+    transform: translate(35px, -25px) scale(1.2); 
+    opacity: 0.8; 
+  }
 }
 
 /* ===== OPTIMIZED CURSOR ANIMATIONS ===== */
