@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclistic Bike Usage Analysis - Pegah Ghods Mohammadi</title>
+    <meta name="description" content="Data analysis project examining bike-share usage patterns between casual riders and annual members using R and Tableau.">
+    
+    <!-- Cute Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon-heart.svg">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon-heart.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/new-modern-portfolio.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="new-portfolio.html" class="logo">PGM</a>
+                
+                <ul class="nav-menu">
+                    <li><a href="new-portfolio.html#home" class="nav-link">Home</a></li>
+                    <li><a href="new-portfolio.html#about" class="nav-link">About</a></li>
+                    <li><a href="new-portfolio.html#services" class="nav-link">Services</a></li>
+                    <li><a href="new-portfolio.html#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="new-portfolio.html#experience" class="nav-link">Experience</a></li>
+                    <li><a href="new-portfolio.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="new-portfolio.html#contact" class="btn btn-primary">Let's Talk</a>
+                    <button class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero section">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="new-portfolio.html">Home</a>
+                <span>/</span>
+                <a href="new-portfolio.html#projects">Projects</a>
+                <span>/</span>
+                <span>Cyclistic Analysis</span>
+            </div>
+            
+            <div class="project-hero-content">
+                <div class="project-category">Data Analytics</div>
+                <h1 class="project-title">Cyclistic Bike Usage Analysis</h1>
+                <p class="project-subtitle">
+                    Analyzed one year of historical ride data from the Cyclistic bike-share program to uncover 
+                    usage patterns between casual riders and annual members for targeted marketing strategies.
+                </p>
+                
+                <div class="project-meta">
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">tidyverse</span>
+                        <span class="tech-tag">dplyr</span>
+                        <span class="tech-tag">lubridate</span>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <a href="https://public.tableau.com/views/BikeusageAnalysis/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i>
+                            <span>View Dashboard</span>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            <span>View Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-hero-image">
+                <img src="assets/img/dash.png" alt="Cyclistic Bike Usage Analysis Dashboard">
+                <div class="project-image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="project-overview-grid">
+                <div class="project-details">
+                    <h2>Project Overview</h2>
+                    <p>
+                        This data analysis project examined bike-sharing usage patterns to understand 
+                        behavioral differences between casual riders and annual members. The analysis 
+                        focused on seasonal, temporal, and usage trends to inform marketing strategies.
+                    </p>
+                    
+                    <h3>Data Scope</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Over 1 million ride records analyzed</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>12 months of historical trip data</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Seasonal and temporal pattern analysis</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>User behavior comparison study</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="project-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Trip Duration</h4>
+                        <p>Casual riders averaged 40% longer trip duration than members</p>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-calendar-weekend"></i>
+                        </div>
+                        <h4>Weekend Usage</h4>
+                        <p>65% of casual rides occurred on weekends, indicating leisure usage</p>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Seasonal Trends</h4>
+                        <p>Summer peaks showed 300% higher ridership compared to winter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="section dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Dashboard</h2>
+                <p class="section-description">
+                    Explore the comprehensive analysis through interactive visualizations showing usage patterns and trends
+                </p>
+            </div>
+        </div>
+        
+        <!-- Full-width dashboard container -->
+        <div class="dashboard-full-width">
+            <div class="dashboard-container">
+                <!-- Loading indicator -->
+                <div class="dashboard-loading" id="dashboardLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading dashboard...</p>
+                </div>
+                
+                <div class="tableau-embed">
+                    <!-- Try multiple embed formats for better compatibility -->
+                    <iframe 
+                        src="https://public.tableau.com/views/BikeusageAnalysis/Dashboard1?:embed=y&:display_count=no&:showVizHome=no"
+                        width="100%" 
+                        height="700" 
+                        frameborder="0"
+                        allowfullscreen
+                        webkitallowfullscreen 
+                        mozallowfullscreen
+                        scrolling="auto"
+                        onload="hideLoadingIndicator()">
+                    </iframe>
+                </div>
+                
+                <!-- Alternative: Tableau JavaScript API embed (if iframe fails) -->
+                <script type="text/javascript">
+                    function hideLoadingIndicator() {
+                        const loading = document.getElementById('dashboardLoading');
+                        if (loading) {
+                            loading.style.display = 'none';
+                        }
+                    }
+                    
+                    // Check if iframe loads, if not, provide fallback
+                    window.addEventListener('load', function() {
+                        setTimeout(function() {
+                            const iframe = document.querySelector('.tableau-embed iframe');
+                            const fallback = document.querySelector('.dashboard-fallback');
+                            const loading = document.getElementById('dashboardLoading');
+                            
+                            // Hide loading after timeout
+                            if (loading) loading.style.display = 'none';
+                            
+                            // Simple check for iframe content
+                            try {
+                                if (iframe && iframe.contentDocument && iframe.contentDocument.body.innerHTML === '') {
+                                    if (fallback) fallback.style.display = 'block';
+                                }
+                            } catch(e) {
+                                // Cross-origin, which is expected for Tableau
+                                // This means the iframe is likely working
+                            }
+                        }, 5000);
+                    });
+                </script>
+                
+                <!-- Fallback link if iframe doesn't load -->
+                <div class="dashboard-fallback" style="display: none;">
+                    <p>Having trouble viewing the dashboard? You can <a href="https://public.tableau.com/views/BikeusageAnalysis/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="dashboard-link">view it directly on Tableau Public</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Findings</h2>
+            </div>
+            
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User Behavior</h3>
+                    <p>Casual riders showed longer trip durations and weekend-focused usage patterns, while members demonstrated consistent weekday commute behavior.</p>
+                </div>
+                
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3>Peak Hours</h3>
+                    <p>Ride activity concentrated between 7-9 AM and 4-7 PM on weekdays, highlighting clear commute hour patterns.</p>
+                </div>
+                
+                <div class="finding-card">
+                    <div class="finding-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Seasonal Impact</h3>
+                    <p>Summer months showed dramatic ridership increases, with peak activity up to 300% higher than winter periods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Data Visualizations</h2>
+                <p class="section-description">
+                    Key charts and insights from the analysis dashboard
+                </p>
+            </div>
+            
+            <div class="viz-grid">
+                <div class="viz-item">
+                    <div class="viz-icon">🔵</div>
+                    <h4>Heatmap: Rides by Day and Hour</h4>
+                    <p>Highlights morning and evening peaks during weekdays</p>
+                </div>
+                
+                <div class="viz-item">
+                    <div class="viz-icon">🟢</div>
+                    <h4>User Type Distribution</h4>
+                    <p>Share comparison between members and casual riders</p>
+                </div>
+                
+                <div class="viz-item">
+                    <div class="viz-icon">🔴</div>
+                    <h4>Seasonal Trends</h4>
+                    <p>Total rides by season showing clear summer peaks</p>
+                </div>
+                
+                <div class="viz-item">
+                    <div class="viz-icon">🟠</div>
+                    <h4>Monthly Breakdown</h4>
+                    <p>Rides by user type across all months of the year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="section">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="new-portfolio.html#projects" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">PGM</div>
+                    <p>Crafting digital experiences and data insights with passion, precision, and innovation.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="new-portfolio.html#home">Home</a></li>
+                            <li><a href="new-portfolio.html#about">About</a></li>
+                            <li><a href="new-portfolio.html#services">Services</a></li>
+                            <li><a href="new-portfolio.html#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/pegahghm" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/pegah-mohammadi/" target="_blank">LinkedIn</a></li>
+                            <li><a href="mailto:pegah81ghm@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/pegahghm" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pegah-mohammadi/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:pegah81ghm@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pegah Ghods Mohammadi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-to-top">
+        <button class="scroll-btn" title="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+            <svg class="progress-ring" width="60" height="60">
+                <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                <circle cx="30" cy="30" r="26" fill="none" stroke="url(#gradient)" stroke-width="3" 
+                        stroke-linecap="round" class="progress-circle"/>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#470741"/>
+                        <stop offset="100%" style="stop-color:#b181ae"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/new-modern-portfolio.js"></script>
+</body>
+</html>

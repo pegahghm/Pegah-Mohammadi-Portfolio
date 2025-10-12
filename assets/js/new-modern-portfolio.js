@@ -363,10 +363,12 @@ function initializeTypingEffect() {
     if (!typingElement) return;
     
     const texts = [
+        'Software Developer',
+        'Data Analyst',
         'Frontend Developer',
-        'UI/UX Designer', 
-        'React Specialist',
-        'Creative Coder'
+        'Full-Stack Developer',
+        'Data Visualization Expert',
+        'React Specialist'
     ];
     
     let textIndex = 0;
@@ -402,39 +404,99 @@ function initializeTypingEffect() {
 
 // ===== PROJECT FILTERS =====
 function initializeProjectFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterTabs = document.querySelectorAll('.filter-tab');
     const projectCards = document.querySelectorAll('.project-card');
+    const projectsGrid = document.querySelector('.projects-grid');
     
-    if (!filterButtons.length) return;
+    if (!filterTabs.length || !projectCards.length) return;
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
+    // Add CSS transitions for filtering if not already present
+    projectCards.forEach(card => {
+        if (!card.style.transition) {
+            card.style.transition = 'all 0.3s ease, transform 0.3s ease';
+        }
+    });
+    
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filter = tab.getAttribute('data-filter');
             
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            // Update active tab with smooth transition
+            filterTabs.forEach(t => {
+                t.classList.remove('active');
+                t.style.transform = 'scale(1)';
+            });
+            tab.classList.add('active');
+            tab.style.transform = 'scale(1.05)';
             
-            // Filter projects
-            projectCards.forEach(card => {
+            // Add loading state
+            if (projectsGrid) {
+                projectsGrid.style.opacity = '0.7';
+            }
+            
+            // Filter projects with staggered animation
+            let visibleCount = 0;
+            
+            projectCards.forEach((card, index) => {
                 const category = card.getAttribute('data-category');
+                const shouldShow = filter === 'all' || category === filter;
                 
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
+                if (shouldShow) {
+                    // Show card with delay
                     setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 10);
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px) scale(0.9)';
+                        
+                        // Animate in
+                        requestAnimationFrame(() => {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 50);
+                        });
+                    }, visibleCount * 100);
+                    
+                    visibleCount++;
                 } else {
+                    // Hide card
                     card.style.opacity = '0';
-                    card.style.transform = 'scale(0.8)';
+                    card.style.transform = 'translateY(-20px) scale(0.8)';
                     setTimeout(() => {
                         card.style.display = 'none';
                     }, 300);
                 }
             });
+            
+            // Remove loading state and reset tab transform
+            setTimeout(() => {
+                if (projectsGrid) {
+                    projectsGrid.style.opacity = '1';
+                }
+                tab.style.transform = 'scale(1)';
+            }, Math.max(300, visibleCount * 100 + 200));
+            
+            // Update URL hash for deep linking (optional)
+            if (filter !== 'all') {
+                history.replaceState(null, null, `#projects-${filter}`);
+            } else {
+                history.replaceState(null, null, '#projects');
+            }
         });
     });
+    
+    // Initialize based on URL hash
+    const hash = window.location.hash;
+    if (hash.startsWith('#projects-')) {
+        const filter = hash.replace('#projects-', '');
+        const targetTab = document.querySelector(`[data-filter="${filter}"]`);
+        if (targetTab) {
+            setTimeout(() => {
+                targetTab.click();
+            }, 500); // Delay to ensure page is fully loaded
+        }
+    }
 }
 
 // ===== CONTACT FORM =====
